@@ -1,4 +1,4 @@
-# arkis-frontend-scripts
+# curvefi-scripts
 
 To install dependencies:
 
