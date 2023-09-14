@@ -1,0 +1,42 @@
+[
+    {
+        "name": "add_liquidity",
+        "outputs": [],
+        "inputs": [
+            { "type": "uint256[2]", "name": "amounts" },
+            { "type": "uint256", "name": "min_mint_amount" }
+        ],
+        "stateMutability": "nonpayable",
+        "type": "function"
+    },
+    {
+        "name": "add_liquidity",
+        "outputs": [],
+        "inputs": [
+            { "type": "uint256[3]", "name": "amounts" },
+            { "type": "uint256", "name": "min_mint_amount" }
+        ],
+        "stateMutability": "nonpayable",
+        "type": "function"
+    },
+    {
+        "name": "remove_liquidity",
+        "outputs": [],
+        "inputs": [
+            { "type": "uint256", "name": "_amount" },
+            { "type": "uint256[2]", "name": "min_amounts" }
+        ],
+        "stateMutability": "nonpayable",
+        "type": "function"
+    },
+    {
+        "name": "remove_liquidity",
+        "outputs": [],
+        "inputs": [
+            { "type": "uint256", "name": "_amount" },
+            { "type": "uint256[3]", "name": "min_amounts" }
+        ],
+        "stateMutability": "nonpayable",
+        "type": "function"
+    }
+]

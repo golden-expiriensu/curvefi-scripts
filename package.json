@@ -1,15 +1,15 @@
 {
-  "name": "arkis-frontend-scripts",
-  "module": "index.ts",
-  "type": "module",
-  "devDependencies": {
-    "bun-types": "latest"
-  },
-  "peerDependencies": {
-    "typescript": "^5.0.0"
-  },
-  "dependencies": {
-    "ethers": "^6.7.1",
-    "prettier": "^3.0.3"
-  }
+    "name": "arkis-frontend-scripts",
+    "module": "index.ts",
+    "type": "module",
+    "devDependencies": {
+        "bun-types": "latest",
+        "prettier": "^3.0.3"
+    },
+    "peerDependencies": {
+        "typescript": "^5.0.0"
+    },
+    "dependencies": {
+        "ethers": "^6.7.1"
+    }
 }
