@@ -1,5 +1,5 @@
 {
-    "name": "arkis-frontend-scripts",
+    "name": "curvefi-scripts",
     "module": "index.ts",
     "type": "module",
     "devDependencies": {
