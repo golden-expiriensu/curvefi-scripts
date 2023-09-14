@@ -9,7 +9,14 @@ const constructWithdrawSignature = (numberOfCoins: number) => {
     return `remove_liquidity(uint256,uint256[${numberOfCoins}])`;
 };
 
-export async function constructWithdrawData(pool: Pool, amount: bigint): Promise<string> {
+export async function constructWithdrawCommand(
+    pool: Pool,
+    amount: bigint,
+): Promise<{
+    target: string;
+    value: bigint;
+    payload: string;
+}> {
     const option = dropdownOptions.find((e) => e.title === pool);
     if (!option) {
         throw new Error(`Unsupported pool: ${pool}`);
@@ -18,8 +25,15 @@ export async function constructWithdrawData(pool: Pool, amount: bigint): Promise
     const minOutput = numberOfCoins === 2 ? [0, 0] : [0, 0, 0];
 
     const contract = new ethers.Contract(pools[pool].pool, CurveFiPool);
-    return contract.interface.encodeFunctionData(constructWithdrawSignature(numberOfCoins), [
-        amount,
-        minOutput,
-    ]);
+
+    const payload = contract.interface.encodeFunctionData(
+        constructWithdrawSignature(numberOfCoins),
+        [amount, minOutput],
+    );
+
+    return {
+        target: await contract.getAddress(),
+        value: 0n,
+        payload,
+    };
 }
